@@ -1,0 +1,59 @@
+.container {
+    margin: 0 auto;
+    text-align: center;
+    height: 95%;
+    
+}
+
+#card-container {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+
+.form-container {
+    background-color: beige;
+    display: none;
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    max-width: 250px;
+    padding: 10px;
+    border-radius: 10%;
+        
+}
+
+.form-container input[type=text] {
+    width: 80%;
+    padding: 10px;
+    margin: 5px 0 22px 0;
+    border: none;
+    
+}
+#close-btn {
+    float: right;
+    margin-right: .8em;
+    font-size: .7rem;
+    border: none;
+}
+
+#newbook-btn {
+    border-radius: 50%;
+    background-color: cadetblue;
+    color: cornsilk;
+    border: none;
+}
+
+.status-btn {
+    font-size: .5rem;
+    margin: .5em;
+    border: none;
+    
+}
+
+.remove-btn {
+    font-size: .5rem;
+    margin: .5em;
+    border: none;
+
+}
