@@ -7,7 +7,14 @@
 
 #card-container {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-evenly;
+}
+
+.card {
+    border: 1px solid rgb(199, 191, 191);
+    margin-bottom: 2em;
+    width: 20%;
 }
 
 
@@ -45,14 +52,16 @@
 }
 
 .status-btn {
-    font-size: .5rem;
+    font-size: .7rem;
     margin: .5em;
     border: none;
+    
+    background-color: rgba(134, 231, 37, 0.842);
     
 }
 
 .remove-btn {
-    font-size: .5rem;
+    font-size: .7rem;
     margin: .5em;
     border: none;
 

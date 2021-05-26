@@ -42,6 +42,7 @@ function displayBooks() {
 
         let card = document.createElement('div');
         card.dataset.index = `${Book.id}`;
+        card.classList.add("card");
         cardContainer.appendChild(card);
 
 
@@ -64,6 +65,23 @@ function displayBooks() {
         editBtn.classList.add("status-btn");
         card.appendChild(editBtn);
 
+        // Change read status
+
+        editBtn.addEventListener('click', (e) => {
+            let read = e.target;
+            for (let i = 0; i < myLibrary.length; i++) {
+                if (myLibrary[i].read === "yes") {
+                    myLibrary[i].read = "no";
+                    read.innerText = myLibrary[i].read;
+                    read.style.backgroundColor = "indianred";
+                } else {
+                    myLibrary[i].read = "yes";
+                    read.innerText = myLibrary[i].read;
+                    read.style.backgroundColor = "lawngreen";
+                };
+            };
+        });
+
         // Remove Button
 
         let removeBtn = document.createElement('button');
@@ -71,10 +89,14 @@ function displayBooks() {
         removeBtn.classList.add("remove-btn");
         card.appendChild(removeBtn);
 
+        // Remove html element
+
         removeBtn.addEventListener('click', (e) => {
             let delElement = e.target.parentElement;
             let delId = delElement.getAttribute('data-index');
             delElement.remove();
+
+            // Remove Book from myLibrary
 
             for (let i = 0; i < myLibrary.length; i++) {
                 if (myLibrary[i].id == delId) {
