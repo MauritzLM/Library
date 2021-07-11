@@ -8,9 +8,7 @@ const pageInput = document.getElementById("pages");
 const readInput = document.getElementById("read");
 const cardContainer = document.getElementById("card-container");
 const formCloseBtn = document.getElementById("close-btn");
-const randomNum = () => Math.floor(Math.random() * 300);
-
-
+randomNum = () => Math.floor(Math.random() * 300);
 
 let myLibrary = [];
 
@@ -22,21 +20,21 @@ class Book {
         this.pages = pages
         this.read = read
     }
-
-
-    addBookToLibrary() {
-        this.id = randomNum();
-        this.title = titleInput.value;
-        this.author = authorInput.value;
-        this.pages = pageInput.value;
-        this.read = readInput.value;
-
-        const newBook = new Book(id, title, author, pages, read);
-        myLibrary.push(newBook);
-    }
 };
 
-addBookToLibrary.prototype = Object.create(Book.prototype);
+function addBookToLibrary() {
+    const id = randomNum();
+    const title = titleInput.value;
+    const author = authorInput.value;
+    const pages = pageInput.value;
+    const read = readInput.value;
+
+    const newBook = new Book(id, title, author, pages, read);
+    myLibrary.push(newBook);
+
+};
+
+// addBookToLibrary.prototype = Object.create(Book.prototype);
 
 function displayBooks() {
     myLibrary.forEach(function (Book) {
