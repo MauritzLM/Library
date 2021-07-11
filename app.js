@@ -14,23 +14,26 @@ const randomNum = () => Math.floor(Math.random() * 300);
 
 let myLibrary = [];
 
-function Book() {
-    this.id = id;
-    this.title = title
-    this.author = author
-    this.pages = pages
-    this.read = read
-};
+class Book {
+    constructor(id, title, author, pages, read) {
+        this.id = id;
+        this.title = title
+        this.author = author
+        this.pages = pages
+        this.read = read
+    }
 
-function addBookToLibrary() {
-    this.id = randomNum();
-    this.title = titleInput.value;
-    this.author = authorInput.value;
-    this.pages = pageInput.value;
-    this.read = readInput.value;
 
-    const newBook = new Book(id, title, author, pages, read);
-    myLibrary.push(newBook);
+    addBookToLibrary() {
+        this.id = randomNum();
+        this.title = titleInput.value;
+        this.author = authorInput.value;
+        this.pages = pageInput.value;
+        this.read = readInput.value;
+
+        const newBook = new Book(id, title, author, pages, read);
+        myLibrary.push(newBook);
+    }
 };
 
 addBookToLibrary.prototype = Object.create(Book.prototype);
